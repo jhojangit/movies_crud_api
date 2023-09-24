@@ -3,6 +3,8 @@ const Movie = require('../models/Movies');
 const Genre = require('../models/Genres');
 const Director = require('../models/Directors');
 const Actor = require('../models/Actors');
+require('../models');
+
 
 const getAll = catchError(async(req, res) => {
     const results = await Movie.findAll({include: [Genre, Actor, Director]});
